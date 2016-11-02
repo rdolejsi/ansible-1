@@ -1514,6 +1514,8 @@ class LinuxNetwork(Network):
             if not os.path.isdir(path):
                 continue
             device = os.path.basename(path)
+            if device.startswith('tap')
+                continue
             interfaces[device] = { 'device': device }
             if os.path.exists(os.path.join(path, 'address')):
                 macaddress = open(os.path.join(path, 'address')).read().strip()
